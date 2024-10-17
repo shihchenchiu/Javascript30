@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- data-key 的屬性，對應到 keycode-->
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+  <!--audio 標籤也對應到一樣的 data-key-->
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="83" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" src="sounds/kick.wav"></audio>
+  <audio data-key="70" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" src="sounds/boom.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="76" src="sounds/tink.wav"></audio>
+
+<script>
+
+
+
+//// 定義 audio 的函數
+  function playSound(e) {
+    //使用 querySelector 選出和 keyCode 匹配的 audio 標籤
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    //使用 querySelector 選出和 keyCode 匹配的 key
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    //檢查是否找到 audio 元素，如果沒有則返回
+    if (!audio) return;
+
+    key.classList.add('playing');//將 'playing' 類名添加到鍵元素上
+    audio.currentTime = 0;// 重置 audoi 播放位置
+    audio.play();// 播放
+  }
+
+  //點擊按鍵後，transition 的效果要拿掉
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;//檢查當 PropertyName 是否等於 transform
+    e.target.classList.remove('playing');// 如果是，移除 class playing，transform 效果就會消失
+  }
+
+  //選擇所有的 keys 元素
+  const keys = Array.from(document.querySelectorAll('.key'));
+  //對每個鍵添加一個 'transitionend' 事件監聽器，當鍵的過渡效果結束時執行
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);// 'keydown' 事件監聽器，按下鍵盤時執行 playSound 函數。
+
+
+</script>
+
+
+</body>
+</html>
