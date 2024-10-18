@@ -7,6 +7,7 @@
 
 ## Practice 2｜Clock
 > 開始於[time=Fri, Oct 18, 2024 1:49 PM]
+http://127.0.0.1:5500/02_clock/index.html
 ### 主題
 用JS與CSS搭配製作一個實時的時鐘效果
 ### Step1 製作時針、分針、秒針
