@@ -1,13 +1,14 @@
 ## Practice 1｜Drum Kit
-> 開始於[time=Thu, Oct 17, 2024 1:11 PM]
+> 開始於 Thu, Oct 17, 2024 1:11 PM
 
 ### 主題
 透過 JS 使鍵盤按下後播放出對應按鍵的聲音，並同時產生一個特效，
 在按下其他鍵後會關閉該特效並於新按鍵中啟用。
 
 ## Practice 2｜Clock
-> 開始於[time=Fri, Oct 18, 2024 1:49 PM]
-http://127.0.0.1:5500/02_clock/index.html
+> 開始於time=Fri, Oct 18, 2024 1:49 PM <br>
+
+[成果]( http://127.0.0.1:5500/02_clock/index.html)
 ### 主題
 用JS與CSS搭配製作一個實時的時鐘效果
 ### Step1 製作時針、分針、秒針
