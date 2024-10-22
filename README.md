@@ -101,4 +101,8 @@ turn（轉）
 **transition-timing-function: cubic-bezier()**
 設定動畫轉場所依據的貝茲曲線，可以透過chrome的開發者工具來進行可視化調整。
 
+### Practice 3｜CSS variables
+製作一個透過 JS 控制 CSS 變數 
+http://127.0.0.1:5500/03_CSS_variables/index.html
+
 
