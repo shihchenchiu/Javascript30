@@ -8,7 +8,6 @@
 ## Practice 2｜Clock
 > 開始於time=Fri, Oct 18, 2024 1:49 PM <br>
 
-[成果]( http://127.0.0.1:5500/02_clock/index.html)
 ### 主題
 用JS與CSS搭配製作一個實時的時鐘效果
 ### Step1 製作時針、分針、秒針
@@ -103,6 +102,6 @@ turn（轉）
 
 ### Practice 3｜CSS variables
 製作一個透過 JS 控制 CSS 變數 
-http://127.0.0.1:5500/03_CSS_variables/index.html
+
 
 
