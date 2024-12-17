@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+// Step1
+// 預設已經有建立了一個城市的.json清單，
+// 先建立一個空的陣列cities並透過fetch來取得json資料存進去。
+const cities = [];
+fetch(endpoint)
+// Step2
+// 建立function findMatches(wordToMatch, cities)
+// 裡面建立了一個RegExp用於match來進行字串比對
+
+// Step3
+// 建立displayMatches()並用addEventListener來監測輸入框的change&keyup，
+// 每次鍵盤輸入時都會觸發displeyMatches()來處理比對，
+// 將比對結果用map來return 組合的HTML的<li>資料，
+
+</script>
+</body>
+</html>
